@@ -4,6 +4,7 @@
   justify-content: space-between;
   margin-bottom: 2rem;
   top: 0;
+  border: 1ps solid red;
 }
 .n-left {
   flex: 1;
