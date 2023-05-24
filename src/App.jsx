@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Intro from "./components/Intro/Intro";
 import Services from "./components/Services/Services";
@@ -8,11 +9,11 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Testimonial from "./components/Testimonials/Testimonial";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import { useContext } from "react";
-import { themeContext } from "./Context";
+import useLocalStorage from "./components/useLocalStorage";
+
 function App() {
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
+
   return (
     <div
       className="App"
@@ -21,15 +22,15 @@ function App() {
         color: darkMode ? "white" : "",
       }}
     >
-      <Navbar />
-      <Intro />
-      <Services />
-      <Experience />
-      <Works />
-      <Portfolio />
-      <Testimonial />
-      <Contact />
-      <Footer />
+      <Navbar setDarkMode={setDarkMode} darkMode={darkMode} />
+      <Intro darkMode={darkMode} />
+      <Services darkMode={darkMode} />
+      <Experience darkMode={darkMode} />
+      <Works darkMode={darkMode} />
+      <Portfolio darkMode={darkMode} />
+      <Testimonial darkMode={darkMode} />
+      <Contact darkMode={darkMode} />
+      <Footer darkMode={darkMode} />
     </div>
   );
 }

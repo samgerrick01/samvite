@@ -4,14 +4,14 @@ import ReactJS from "../../img/reactjs.png";
 import JavaScript from "../../img/js.png";
 import "./Navbar.css";
 import { Link } from "react-scroll";
-const navbar = () => {
+const navbar = ({ setDarkMode, darkMode }) => {
   return (
     <div className="n-wrapper" id="Navbar">
       {/* left */}
       <div className="n-left">
         <img src={ReactJS} width={72} height={52} alt="" />
         <img src={JavaScript} width={72} height={42} alt="" />
-        <Toggle />
+        <Toggle darkMode={darkMode} setDarkMode={setDarkMode} />
       </div>
       {/* right */}
       <div className="n-right">

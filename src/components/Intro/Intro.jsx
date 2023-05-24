@@ -10,16 +10,11 @@ import FloatinDiv from "../FloatingDiv/FloatingDiv";
 import Github from "../../img/github.png";
 import LinkedIn from "../../img/linkedin.png";
 import Instagram from "../../img/instagram.png";
-import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-const Intro = () => {
+const Intro = ({ darkMode }) => {
   // Transition
   const transition = { duration: 2, type: "spring" };
-
-  // context
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
 
   return (
     <div className="Intro" id="Intro">

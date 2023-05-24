@@ -5,13 +5,10 @@ import Scss from "../../img/scss.png";
 import ReactJS from "../../img/reactjs.png";
 import Tailwind from "../../img/talwindcss.png";
 import Vite from "../../img/vite.svg";
-import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-const Works = () => {
+const Works = ({ darkMode }) => {
   // context
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
 
   // transition
   return (
